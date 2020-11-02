@@ -1,0 +1,379 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+
+
+/**/
+:root{
+    --primary-color: #047aed;
+    --secondary-color: #1c3fa8;
+    --dark-color: #002240;
+    --light-color: #f4f4f4;
+    --success-color: #5cb85c;
+    --error-color: #d9534f;
+
+}
+
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+body{
+    font-family: 'Lato', sans-serif;
+    color: #333;
+    line-height: 1.6; /* For increasing some space or gap between the lines */
+}
+
+ul{
+    list-style-type: none; /* For removing any of the bullet points that maybe present */
+}
+
+a{
+    text-decoration: none;  /* For removing the underlines from the links  */
+    color: #333;
+}
+
+h1,h2{
+    font-weight: 300; /*This will make the font a bit less bold */
+    line-height: 1.2;
+    margin: 10px 0; /* Top and bottom is 10px but left and right is 0px */
+}
+
+p{
+     margin: 10px 0; /* To make sure that the paragraphs are distinguishable from each other */
+}
+
+img{
+    width: 100%; /* This will keep the images within their containers. Even if it is a large image it is not going to bust out of it's container, it is going to take the 100% of the container. */
+}
+
+code,pre{
+    background: #333;
+    color: #fff;
+    padding: 10px;
+}
+
+/* Navbar Styles */
+.navbar{
+    background-color: var(--primary-color);
+    color: #fff;
+    height: 70px;
+}
+
+.navbar ul{
+    display: flex; /*All of the links are lined up in a row horizontally*/
+}
+
+.navbar a{
+    color: #fff;
+    /*Too break up the links and make them separate to each other*/
+    padding: 10px;
+    margin: 0 5px;
+}
+
+.navbar a:hover {
+  border-bottom: 2px #fff solid;
+}
+
+
+.navbar .flex{
+    justify-content: space-between; /*This means that if the flex class is within the navbar then put justify content as space-between.*/
+}
+/* Showcase */
+.showcase{
+    height: 400px;
+    background-color: var(--primary-color);
+    color: #fff;
+    position: relative;  /*So that if we want to position anything absolute within it we can */
+}
+
+.showcase h1{
+    font-size: 40px;
+}
+
+.showcase p{
+    margin: 20px 0;
+}
+
+.showcase .grid{
+    overflow: visible;
+    grid-template-columns: 55% 45%;
+    gap: 30px;
+}
+
+.showcase-text {
+  animation: slideInFromLeft 1s ease-in;
+}
+.showcase-form{
+    position: relative;
+    top: 60px;
+    height: 350px;
+    width: 400px;
+    padding: 40px;
+    z-index: 100;
+    justify-self: flex-end;
+    animation: slideInFromRight 1s ease-in;
+}
+
+.showcase-form .form-control{
+    margin: 30px 0;
+}
+
+.showcase-form input[type='text'],
+.showcase-form input[type='email']{
+    border: 0;
+    border-bottom: 1px solid #b4becb;
+    width: 100%;
+    padding: 3px;
+    font-size: 16px;
+}
+
+.showcase-form input:focus{
+    outline: none;
+}
+
+.showcase::before,
+.showcase::after {
+  content: '';
+  position: absolute;
+  height: 100px;
+  bottom: -70px;
+  right: 0;
+  left: 0;
+  background: #fff;
+  transform: skewY(-3deg);
+  -webkit-transform: skewY(-3deg);
+  -moz-transform: skewY(-3deg);
+  -ms-transform: skewY(-3deg);
+}
+
+/* Stats */
+
+.stats{
+    padding-top: 100px;
+    animation: slideInFromBottom 1s ease-in;
+}
+
+.stats-heading{
+    max-width: 500px; /* To squeeze it in, make it more compact*/
+    margin: auto; /*To make it centered within the container*/
+}
+
+/* Cli */
+.cli .grid{
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(2,1fr);
+}
+
+/* We want the first item so we will say, anything that is the first child. It means that under cli grid whatever the first child is will be selected. In case here is the image. */
+.cli .grid > *:first-child{
+    grid-column: 1/ span 2; /*Here we want the column to go from 1 and span to 2 columns*/
+    grid-row: 1/ span 2;/*Here we want the row to go from 1 and span to 2 rows*/
+}
+
+/* Cloud */
+.cloud .grid{
+    grid-template-columns: 4fr 3fr;
+}
+
+/*Languages*/
+
+.languages .flex{
+    flex-wrap: wrap; /*This is given so that whenever the browser is resized then the cards also move down as the size decreases to make the cards a bit more responsive to the resizing of the browser.*/
+}
+
+.languages .card{
+    text-align: center;
+    margin: 18px 10px 40px; 
+    transition: transform 0.2s ease-out;  /*To give some sort of transition to the transform so that it goes slowly and smoothly instead of flicking upwards without the transition applied.*/
+}
+
+.languages .card h4{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.languages .card:hover{
+    transform: translateY(-15px); /*translateY() moves it along the Y-axis and we want the cards to move up so we use a negative value to move them up. If the value was positive then the cards would have moved down. */
+}
+
+/* Features */
+
+.features-head img, .docs-head img{
+    width: 200px;
+    justify-self: flex-end;
+}
+
+.features-sub-head img{
+    width: 300px;
+    justify-self: flex-end;
+}
+
+.features-main .card > i{
+     margin-right: 20px; /*This will put some spacing between the icon and the paragraphs or writing. */
+}
+
+.features-main .grid{
+    padding: 30px;
+}
+
+.features-main .grid > *:first-child{
+    /* This means the first child of the grid will be spanning from 1 column to 3 columns */
+    grid-column: 1/ span 3; 
+}
+
+.features-main .grid > *:nth-child(2){
+    /* This means the nth child of the grid will be spanning from 1 column to 2 columns */
+    grid-column: 1/ span 2; 
+}
+
+/* Docs */
+.docs-main h3{
+    margin: 20px 0;
+}
+
+.docs-main .grid{
+    grid-template-columns: 1fr 2fr;
+    align-items: flex-start;
+}
+
+.docs-main nav li{
+    font-size: 17px;
+    padding-bottom: 5px;
+    margin-bottom: 5px;
+    border-bottom: 1px #ccc solid;
+}
+
+.docs-main a:hover{
+    font-weight: bold;
+}
+
+/* Footer */
+
+.footer .social a{
+    margin: 0 10px;
+}
+
+/* Animations */
+@keyframes slideInFromLeft {
+  0% {
+      /* This basically means it will start off the screen from the left. */
+    transform: translateX(-100%);
+  }
+
+  100% {
+      /* This means it will end up in it's normal position. */
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+      /* This basically means it will start off the screen from the right. */
+    transform: translateX(100%);
+  }
+
+  100% {
+      /* This means it will end up in it's normal position. */
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+     /* This basically means it will start off the screen from the top. */
+    transform: translateY(-100%);
+  }
+
+  100% {
+      /* This means it will end up in it's normal position. */
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromBottom {
+  0% {
+    /* This basically means it will start off the screen from the bottom. */
+    transform: translateY(100%);
+  }
+
+  100% {
+    /* This means it will end up in it's normal position. */
+    transform: translateX(0);
+  }
+}
+
+/* Tablets and under */
+@media (max-width: 768px) {
+  .grid,
+  .showcase .grid,
+  .stats .grid,
+  .cli .grid,
+  .cloud .grid,
+  .features-main .grid,
+  .docs-main .grid {
+      /* This is do that that all of these are taking only 1 space worth of column size and 1 size worth of row size wherever row is used. */
+    grid-template-columns: 1fr; 
+    grid-template-rows: 1fr;
+  }
+
+  .showcase {
+      /* As the size of the browser is reduced the height of the showcase class should increase but initially it is fixed to 400px so here it is set to auto so that whenever the size of the screen is reduced or increased then the showcase class would take up the amount of the container.  */
+    height: auto; 
+  }
+
+  .showcase-text {
+    text-align: center;
+     margin-top: 40px; /*To push it down a little bit */
+    animation: slideInFromTop 1s ease-in;
+  }
+
+  .showcase-form {
+     justify-self: center;/* "justify-content" is used either on a flex box container or a grid container and it justifies all of the elements inside. "justify-self" is put on an actual flex or grid item to justify that item only.   */
+    margin: auto;
+    animation: slideInFromBottom 1s ease-in;
+  }
+
+  .cli .grid > *:first-child {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .features-head,
+  .features-sub-head,
+  .docs-head {
+    text-align: center;
+  }
+
+  .features-head img,
+  .features-sub-head img,
+  .docs-head img {
+    justify-self: center;
+  }
+
+  .features-main .grid > *:first-child,
+  .features-main .grid > *:nth-child(2) {
+      /* These were initially spanning to 3 or 2 columns and now the span is set to 1. */
+    grid-column: 1;
+  }
+}
+
+/* Mobile */
+@media (max-width: 500px) {
+  .navbar {
+    height: 110px;
+  }
+
+  .navbar .flex {
+    flex-direction: column; /*In navbar, We had a class called flex and it is a row by default and we are setting it to a column here. It will put the Logo and the Nav on top of each other.   */
+  }
+
+  .navbar ul {
+    padding: 10px;
+    background-color: rgba(0, 0, 0, 0.1);  /* To give it a transparent background*/
+  }
+  
+  .showcase-form {
+    width: 300px;
+  }
+}

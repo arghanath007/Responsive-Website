@@ -1,0 +1,232 @@
+.container{
+    max-width: 1100px;
+    margin: 0 auto; /* Top and bottom is 0, left and right is auto which means it is in the middle of the screen */
+    overflow: auto; /* This is to remove the space that is happening due to the 10px margin the heading has. */
+    padding: 0 40px; /* Top and bottom is 0, left and right had 40px of padding*/
+}
+
+.card{
+    background-color: #fff;
+    border-radius: 20px;
+    color: #333;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.5);  /*Horizontal offset is 0,vertical offset is 3px, blurr is 10px and the color is rgba.*/
+    padding: 20px;
+    margin: 10px;
+}
+
+.btn{
+    display: inline-block; /*This is applied to both buttons and Links and by default both buttons and links are inline.*/
+    padding: 10px 30px;
+    cursor: pointer;
+    background: var(--primary-color);
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+}
+
+.btn-outline{
+    background: transparent;
+    border: 1px #fff solid;
+}
+
+.btn:hover{
+    transform: scale(.80);
+}
+
+/* Backgrounds and colored buttons */
+
+.bg-primary, .btn-primary{
+    background: var(--primary-color);
+    color: #fff;
+}
+
+.bg-secondary, .btn-secondary{
+    background: var(--secondary-color);
+    color: #fff;
+}
+
+.bg-dark, .btn-dark{
+    background: var(--dark-color);
+    color: #fff;
+}
+
+.bg-light, .btn-light{
+    background: var(--light-color);
+    color: #333;
+}
+
+.bg-primary a, .btn-primary a,.bg-secondary a, .btn-secondary a,.bg-dark a, .btn-dark a{
+    color: #fff;
+}
+/* Text Colors */
+
+.text-primary {
+  color: var(--primary-color);
+}
+
+.text-secondary {
+  color: var(--secondary-color);
+}
+
+.text-dark {
+  color: var(--dark-color);
+}
+
+.text-light {
+  color: var(--light-color);
+}
+
+/* Tex-sizes */
+.lead{
+    /* Used mainly in paragraphs */
+    font-size: 20px;
+}
+
+.sm{
+    font-size: 1rem;
+}
+
+.md{
+    font-size: 2rem;
+}
+
+.lg{
+    font-size: 3rem;
+}
+
+.xl{
+    font-size: 4rem;
+}
+
+.text-centre{
+    text-align: center;
+}
+
+/*   Alert */ 
+.alert {
+  background-color: var(--light-color);
+  padding: 10px 20px;
+  font-weight: bold;
+  margin: 15px 0;
+}
+
+.alert i {
+  margin-right: 10px;
+}
+
+.alert-success {
+  background-color: var(--success-color);
+  color: #fff;
+}
+
+.alert-error {
+    /* For if some sort of error shows up. */
+  background-color: var(--error-color);
+  color: #fff;
+}
+
+.flex{
+    display: flex;
+    justify-content: center; /*This pertains to the main axis which is row or horizontal here */
+    align-items: center; /*This pertains to the cross axis which is the column or vertical here */
+    height: 100%;
+}
+
+.grid{
+    display: grid; /*Here, this doesn't automatically turn into a row like it happens in flexbox but we have to add another property to make it a row which is the "grid-template-columns" property of grid .*/
+    grid-template-columns: repeat(2,1fr);  /* grid-template-columns: 1fr 1fr; It is used to define how wide we want each columns now. Here, the grid class turns the "container grid" class into a grid  container and each direct element or item here is a grid item so both the "showcase-text" and "showcase-form card" classes are grid items now and we want both of them to be in a row. So here we define how wide we want these. We dont use pixels here, we can use percentages or fr(fractions) here. */
+    gap: 20px;/* To give space in between the elements that are present within the row in this case here.*/
+    justify-content: center; /* horizontal Alignment or main */
+    align-items: center;/* Vertical Alignment or cross, But they are not vertically aligned as there is no height on the "grid" class, so we need to give it some height. */
+    height: 100%;
+}
+
+.grid-3{
+    grid-template-columns: repeat(3,1fr); 
+}
+
+/* Margins */
+
+.my-1{
+    margin: 1rem 0;
+}
+
+.my-2{
+    margin: 1.5rem 0;
+}
+
+.my-3{
+    margin: 2rem 0;
+}
+
+.my-4{
+    margin: 3rem 0;
+}
+
+.my-5{
+    margin: 4rem 0;
+}
+
+/* These are for all the way around margins meaning covering all of the directions left,right,top, bottom. */
+.m-1{
+    margin: 1rem;
+}
+
+.m-2{
+    margin: 1.5rem;
+}
+
+.m-3{
+    margin: 2rem;
+}
+
+.m-4{
+    margin: 3rem;
+}
+
+.m-5{
+    margin: 4rem;
+}
+
+/* Paddings */
+
+.py-1{
+    padding: 1rem 0;
+}
+
+.py-2{
+    padding: 1.5rem 0;
+}
+
+.py-3{
+    padding: 2rem 0;
+}
+
+.py-4{
+    padding: 3rem 0;
+}
+
+.py-5{
+    padding: 4rem 0;
+}
+
+/* These are for all the way around paddings meaning covering all of the directions left,right,top, bottom. */
+.p-1{
+    padding: 1rem;
+}
+
+.p-2{
+    padding: 1.5rem;
+}
+
+.p-3{
+    padding: 2rem;
+}
+
+.p-4{
+    padding: 3rem;
+}
+
+.p-5{
+    padding: 4rem;
+}
